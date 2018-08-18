@@ -7,16 +7,12 @@
             <h1><a href = '/'>Django Girls blog</a></h1>
         </div>
 
+        {% for post in posts %}
         <div>
-            <p>Published: 16.08.2018, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>sldflsdhflhl sldkflskdjhf sldfhlskhdfl</p>
+            <p>Published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>Published: 16.08.2018, 13:15</p>
-            <h2><a href="">My second post</a></h2>
-            <p>sldfjslkdjf sldkfjskldj sldkfjslkdj</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
